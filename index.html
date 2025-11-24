@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Compras</title>
+</head>
+<body>
+    <h1>Lista de Compras</h1>
+
+    <input type="text" id="item" placeholder="Insira o item">
+    <button onclick="adicionar()">Adicionar</button>
+    <button onclick="visualizar()">Visualizar</button>
+    <button onclick="remover()">Remover</button>
+
+    <script>
+        let itens = [];
+        function adicionar(){
+            let item = document.getElementById("item").value;
+            if(item != ''){
+                itens.push(item);
+                console.log("Adicionado")
+            }else{
+                console.log("Vazio")
+            }
+            
+        }
+
+        function visualizar(){
+            for (let i = 0; i < itens.length; i++){
+                
+            }
+        }
+
+        // function remover(){
+
+        // }
+    </script>
+
+    
+</body>
+</html>
