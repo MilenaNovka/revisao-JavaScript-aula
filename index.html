@@ -3,40 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Compras</title>
+    <title>Votação de Jogos</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Lista de Compras</h1>
+    <h1>Escolha seu gênero de jogo favorito</h1>
 
-    <input type="text" id="item" placeholder="Insira o item">
-    <button onclick="adicionar()">Adicionar</button>
-    <button onclick="visualizar()">Visualizar</button>
-    <button onclick="remover()">Remover</button>
+    <button onclick="votar(0)">Corrida</button>
+    <button onclick="votar(1)">Ação</button>
+    <button onclick="votar(2)">Aventura</button>
+    <button onclick="votar(3)">RPG</button>
+    <button onclick="votar(4)">FPS</button>
+    <button onclick="votar(5)">Esportes</button>
+    <button onclick="votar(6)">Estratégia</button>
+    <button onclick="votar(7)">Terror</button>
+    
+
+    <div class="resultado" id="resultado"></div>
 
     <script>
-        let itens = [];
-        function adicionar(){
-            let item = document.getElementById("item").value;
-            if(item != ''){
-                itens.push(item);
-                console.log("Adicionado")
-            }else{
-                console.log("Vazio")
-            }
-            
+        let votos = [0, 0, 0, 0, 0, 0, 0, 0];
+
+        function votar(categoria){
+            votos[categoria]++; 
+            mostrarResultado();
         }
 
-        function visualizar(){
-            for (let i = 0; i < itens.length; i++){
-                
-            }
+        function mostrarResultado(){
+            document.getElementById("resultado").innerHTML = 
+                "<h2>Resultados:</h2>" +
+                "Corrida: " + votos[0] + " votos<br>" +
+                "Ação: " + votos[1] + " votos<br>" +
+                "Aventura: " + votos[2] + " votos<br>" +
+                "RPG: " + votos[3] + " votos<br>" +
+                "Esportes: " + votos[4] + " votos<br>" +
+                "FPS: " + votos[5] + " votos<br>" +
+                "Estratégia: " + votos[6] + " votos<br>" +
+                "Terror: " + votos[7] + " votos";
         }
-
-        // function remover(){
-
-        // }
     </script>
-
-    
 </body>
 </html>
